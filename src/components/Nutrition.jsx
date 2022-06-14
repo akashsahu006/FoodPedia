@@ -31,7 +31,7 @@ const Nutrition = () => {
         <Head>
             <h3>Gym day? Say no more...</h3>
             
-                <button onClick={submitHandle}>More nutritious recipes</button>
+                <button onClick={submitHandle}><p>More nutritious recipes</p></button>
             
         </Head>
         <Cards>
@@ -91,6 +91,17 @@ const Head = styled.div`
         border-radius: 1rem;
         color: white;
         border-width: 0;
+        
+        p{
+        font-family: 'Nuosu SIL', serif;
+        font-weight: 500;
+        /* letter-spacing: 0.2rem; */
+        }
+    }
+    h3{
+        font-family: 'Nuosu SIL', serif;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
     }
 `
 const Cards = styled.div`

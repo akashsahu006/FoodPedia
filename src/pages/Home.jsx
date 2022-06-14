@@ -40,6 +40,7 @@ const Container = styled.div`
         font-family: 'Antic Didone', serif;
         font-weight: 900;
         letter-spacing: 0.5rem;
+        
     }
 `
 

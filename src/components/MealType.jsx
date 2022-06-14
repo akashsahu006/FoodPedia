@@ -80,6 +80,11 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  h3{
+    font-family: 'Nuosu SIL', serif;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+  }
 `
 
 const Card = styled.div`

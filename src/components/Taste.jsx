@@ -44,6 +44,11 @@ const Container = styled.div`
     width: 100vw;
 
     /* background-color: red; */
+    h3{
+        font-family: 'Nuosu SIL', serif;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+    }
 `
 
 const Cards = styled.div`
@@ -87,6 +92,7 @@ const Card = styled.div `
         justify-content: center;
         align-items: center;
     }
+    
     
 `
 const Gradient = styled.div`
