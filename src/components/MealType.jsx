@@ -1,28 +1,49 @@
-import { useEffect, useState } from "react";
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css'
-
+import {Link} from "react-router-dom"
 import styled from "styled-components";
 
 const MealType = () => {
 
-    const [mealTypeData, setMealTypeData] = useState([]);
+    const mealData = [
+      {
+        id: 1,
+        title: "Dessert",
+        image: "https://spoonacular.com/recipeImages/1096302-312x231.jpg",
+      },
+      {
+        id: 2,
+        title: "Appetizer",
+        image: "https://spoonacular.com/recipeImages/1095745-312x231.jpg",
+      },
+      {
+        id:3,
+        title: "Main course",
+        image:"https://spoonacular.com/recipeImages/716408-312x231.jpg",
+      },
+      {
+        id:4,
+        title: "Drink",
+        image: "https://spoonacular.com/recipeImages/660227-312x231.jpg",
+      },
+      {
+        id: 5,
+        title: "Breakfast",
+        image: "https://spoonacular.com/recipeImages/655186-312x231.jpg",
+      },
+      {
+        id: 6,
+        title: "Salad",
+        image: "https://spoonacular.com/recipeImages/729366-312x231.jpg",
+      },
+    ]
 
-    const getMealType = async () =>{
-        const api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&type=main course`);
-        const data = await api.json();
-        await setMealTypeData(data.results);
-    }
-
-    useEffect(() => {
-        getMealType();
-    },[])
 
   return (
         <Wrapper>
-            <div>
+            <TitleContainer>
                 <h3>Mealtype</h3>
-            </div>
+            </TitleContainer>
             <div>
                 <Splide options={{
                     perPage:4,
@@ -32,12 +53,15 @@ const MealType = () => {
                     gap: '5rem'
                 }
                 }>
-                {mealTypeData.map((recipe) => {
+                {mealData.map((recipe) => {
                     return <SplideSlide key={recipe.id}>
-                        <Card>
-                            <img src={recipe.image} alt="" />
-                            <p>{recipe.title}</p>
-                        </Card>
+                      <Link to={"/meal/" + recipe.title}>
+                          <Card>
+                              <img src={recipe.image} alt="" />
+                              <p>{recipe.title}</p>
+                              <Gradient/>
+                          </Card>
+                        </Link>
                     </SplideSlide>
                 })}
                 </Splide>
@@ -50,6 +74,13 @@ const Wrapper = styled.div`
   margin: 0rem;
   padding: 3rem;
 `;
+
+const TitleContainer = styled.div`
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const Card = styled.div`
   height: 16rem;
