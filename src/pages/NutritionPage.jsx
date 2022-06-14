@@ -1,5 +1,6 @@
 import { useEffect , useState} from "react"
 import styled from "styled-components"
+import {Link} from "react-router-dom"
 
 const NutritionPage = () => {
     const [nutritionRecipes,setNutritionRecipes] = useState([]);
@@ -22,11 +23,13 @@ const NutritionPage = () => {
         <h2>Give your body a Nutritious diet!</h2>
         <Cards>
             {nutritionRecipes.map((recipe) => {
-                return <Card  key={recipe.id}>
-                <img src={recipe.image} alt="" />
-                <p>{recipe.title}</p>
-                <Gradient/>
-            </Card>
+                return <Link to={"/recipe/" + recipe.id}> 
+                    <Card  key={recipe.id}>
+                    <img src={recipe.image} alt="" />
+                    <p>{recipe.title}</p>
+                    <Gradient/>
+                </Card>
+            </Link>
             })}
         </Cards>
     </Container>

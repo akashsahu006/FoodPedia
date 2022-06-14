@@ -42,7 +42,7 @@ const MealType = () => {
   return (
         <Wrapper>
             <TitleContainer>
-                <h3>Mealtype</h3>
+                <h3>Craft delicious Recipe</h3>
             </TitleContainer>
             <div>
                 <Splide options={{
