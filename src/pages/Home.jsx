@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Taste from "../components/Taste"
 import Nutrition from "../components/Nutrition"
 import MealType from "../components/MealType"
+import SearchBar from "../components/SearchBar"
 
 const Home = () => {
   return (
@@ -9,6 +10,9 @@ const Home = () => {
         <div>
             <h2>FoodPedia</h2>
         </div>
+        <SearchContainer>
+            <SearchBar/>
+        </SearchContainer>
         <MealContainer>
             <MealType/>
         </MealContainer>
@@ -44,9 +48,16 @@ const Container = styled.div`
     }
 `
 
+const SearchContainer = styled.div `
+    margin-top: 5rem;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 const MealContainer = styled.div`
     width: 100vw;
-    margin: 2rem;
 `
 
 export default Home

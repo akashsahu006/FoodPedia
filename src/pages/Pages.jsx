@@ -3,6 +3,7 @@ import Recipe from "./Recipe"
 import NutritionPage from "./NutritionPage"
 import FullRecipe from "./FullRecipe"
 import MealPage from "./MealPage"
+import SearchPage from "./SearchPage"
 import {Routes, Route} from "react-router-dom"
 
 const Pages = () => {
@@ -14,6 +15,7 @@ const Pages = () => {
         <Route path="/nutrition" element={<NutritionPage/>}/> 
         <Route path="/recipe/:id" element={<FullRecipe/>} />
         <Route path="/meal/:meal" element={<MealPage/>} />
+        <Route path="/search/:query" element={<SearchPage/>} />
     </Routes>
   )
 }
